@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 // BetterIPChecker Include
-$.getScript("https://gitcdn.xyz/repo/Logfro/BetterHex/master/BetterIPChecker.js");
+$.getScript("https://gitcdn.xyz/repo/R34P3R5/BetterHex/master/BetterIPChecker.js");
 
 (function() {
     'use strict';
