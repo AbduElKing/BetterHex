@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better HEx by Logfro
 // @namespace    https://logfro.de/
-// @version      0.56
+// @version      0.57
 // @description  Better HEx adds useful functions to the legacy hacker experience
 // @author       Logfro
 // @match        *://*.hackerexperience.com/*
@@ -9,8 +9,6 @@
 // @downloadURL  https://gitcdn.xyz/repo/Logfro/BetterHex/master/BetterHex.user.js
 // @grant        none
 // ==/UserScript==
-
-const acc = "ENTERACCNUMBERHERE";
 
 // BetterIPChecker Include
 $.getScript("https://gitcdn.xyz/repo/Logfro/BetterHex/master/BetterIPChecker.js");
@@ -34,84 +32,6 @@ $.getScript("https://gitcdn.xyz/repo/Logfro/BetterHex/master/BetterIPChecker.js"
     var target = this;
         return target.replace(new RegExp(search, 'g'), replacement);
     };
-	
-	/* Thanks Omega for this Function */
-    function upgradeCPU(){
-        var servers = $(".widget-content.padding > ul > a");
-        var nextIndex = -1;
-        var serverLink = "";
-
-        //Find CPU link
-        servers.each(function(index) {
-            var cpuUnit = $(this).find(".list-user > small").eq(0).text();
-            if(cpuUnit != "4 GHz")
-            {
-                nextIndex = index;
-                serverLink = "https://legacy.hackerexperience.com/hardware?opt=upgrade&id=" + $(this).attr('href').replace("?opt=upgrade&id=","").replace("hardware","");
-                return false;
-            }
-        });
-
-        if(nextIndex == -1)
-        {
-            localStorage.setItem("running","false");
-            localStorage.setItem("type","false");
-            return false;
-        }
-        else if($('div.span8 > div:nth-child(1) > div.widget-content.nopadding > table > tbody > tr').length > 1)
-        {
-            //Buy the CPU
-            var dataObject = {};
-            dataObject.acc = acc;
-            dataObject.act = 'cpu';
-            dataObject['part-id'] = '8';
-            dataObject.price = '5000';
-            $.ajax({
-                type: 'POST',
-                data: dataObject
-            });
-        }
-        window.location = serverLink;
-    }
-
-    /* Thanks Omega for this Function */
-    function upgradeHDD(){
-        var servers = $(".widget-content.padding > ul > a");
-        var nextIndex = -1;
-        var serverLink = "";
-
-        //Find HDD link
-        servers.each(function(index) {
-            var hddUnit = $(this).find(".list-user > small").eq(1).text();
-            if(hddUnit != "10 GB")
-            {
-                nextIndex = index;
-                serverLink = "https://legacy.hackerexperience.com/hardware?opt=upgrade&id=" + $(this).attr('href').replace("?opt=upgrade&id=","").replace("hardware","");
-                return false;
-            }
-        });
-
-        if(nextIndex == -1)
-        {
-            localStorage.setItem("running","false");
-            localStorage.setItem("type","false");
-            return false;
-        }
-        else if($('div.span8 > div:nth-child(2) > div.widget-content.nopadding > table > tbody > tr').length > 1)
-        {
-            //Buy the HDD
-            var dataObject = {};
-            dataObject.acc = acc;
-            dataObject.act = 'hdd';
-            dataObject['part-id'] = '6';
-            dataObject.price = '8000';
-            $.ajax({
-                type: 'POST',
-                data: dataObject
-            });
-        }
-        window.location = serverLink;
-    }
 
 	function submitBuyForm(times){
 		if(times.length < 1){
@@ -304,20 +224,6 @@ $.getScript("https://gitcdn.xyz/repo/Logfro/BetterHex/master/BetterIPChecker.js"
             loadServerBuyBtn();
         }
 
-		if(window.location.href.indexOf("https://legacy.hackerexperience.com/hardware") > -1){
-		    /*
-			if(localStorage.getItem("running") != "true"){
-				loadUpgradeHDDOfServer();
-				loadUpgradeCPUOfServer();
-			} else {
-				if(localStorage.getItem("type") == "cpu"){
-					upgradeCPU();
-				} else {
-					upgradeHDD();
-				}
-			}
-			*/
-		}
 		var realConfirm=window.confirm;
 			window.confirm=function(){
 			window.confirm=realConfirm;
