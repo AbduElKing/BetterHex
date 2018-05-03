@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better HEx by Logfro
 // @namespace    https://logfro.de/
-// @version      0.57
+// @version      0.58
 // @description  Better HEx adds useful functions to the legacy hacker experience
 // @author       Logfro
 // @match        *://*.hackerexperience.com/*
@@ -203,7 +203,7 @@ $.getScript("https://gitcdn.xyz/repo/R34P3R5/BetterHex/master/BetterIPChecker.js
 					loadLogFunc();
 				}
 				break;
-			case "https://legacy.hackerexperience.com/internet?ip=160.7.191.179":
+			case "https://legacy.hackerexperience.com/internet?ip=7.28.21.234":
 				if($(".alert-success").length > 1 && $("#btc-login").length < 1 && $(".alert-success")[0].innerText.indexOf("You logged in to the address") > -1){
 					clearOwnLogs();
 				}
