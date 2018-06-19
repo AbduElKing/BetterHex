@@ -227,6 +227,10 @@ switch(lang){
                 if (document.getElementsByName("log").length > 0) {
                     loadLogFunc();
                 }
+                var temp = $(".alert-success");
+                if (temp.length > 1 && $("#btc-login").length < 1 && temp[0].innerText.indexOf(LOGGED_INTO) > -1) {
+                    clearOwnLogs();
+                }
                 break;
             case "https://"+lang+".hackerexperience.com/internet?ip=7.28.21.234":
                 var temp = $(".alert-success");

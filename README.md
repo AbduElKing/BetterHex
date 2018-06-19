@@ -27,4 +27,4 @@ If you have any suggestions then just edit the ideas.txt file put your suggestio
 
 For some features i need money, so if you have some btc to spare i am happy to take it :)
 
-My ingame BTC: 1p82FceyJrj6YFZz3HNiQEmidPuLCrriRz
+My ingame BTC: 158KBrGoyRmQUf9qfH5pltglvWBOUfepln
