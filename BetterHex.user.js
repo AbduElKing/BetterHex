@@ -2,7 +2,7 @@
 // @name         Better HEx by Logfro
 // @namespace    https://logfro.de/
 // @version      0.6
-// @description  Better HEx adds useful functions to the "+lang+" hacker experience
+// @description  Better HEx adds useful functions to the "legacy" hacker experience
 // @author       Logfro
 // @match        *://*.hackerexperience.com/*
 // @updateURL    https://gitcdn.xyz/repo/Logfro/BetterHex/master/BetterHex.meta.js
@@ -17,8 +17,8 @@ var lang;
 if(window.location.href.indexOf("//br.") > -1) {
     lang="br";
 }
-if(window.location.href.indexOf("//"+lang+".") > -1) {
-    lang=""+lang+"";
+if(window.location.href.indexOf("//legacy.") > -1) {
+    lang="legacy";
 }
 if(window.location.href.indexOf("//en.") > -1) {
     lang="en";
