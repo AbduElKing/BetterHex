@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better HEx by Logfro
 // @namespace    https://logfro.de/
-// @version      0.6
+// @version      0.60
 // @description  Better HEx adds useful functions to the "legacy" hacker experience
 // @author       Logfro
 // @match        *://*.hackerexperience.com/*
@@ -25,7 +25,7 @@ if(window.location.href.indexOf("//en.") > -1) {
 }
 var NO_NUMBER,NOT_NUMBER,NO_IP,NO_IP2,CLEAR_OWN_LOGS_BTN,TIMES,BUY_TIMES,DEL_ENTRIES,LOGGED_INTO;
 switch(lang){
-        case "en" || "legacy":
+        case "en":
         NO_NUMBER = "You need to type in a number!";
         NOT_NUMBER = " Not a number!";
         NO_IP = "Your IP (";
@@ -46,6 +46,17 @@ switch(lang){
         BUY_TIMES = "Comprar x vezes";
         DEL_ENTRIES = "Apaga o teu log";
         LOGGED_INTO = "Você entrou no endereço";
+        break;
+    case "legacy":
+        NO_NUMBER = "You need to type in a number!";
+        NOT_NUMBER = " Not a number!";
+        NO_IP = "Your IP (";
+        NO_IP2 = ") isnt present in this log!";
+        CLEAR_OWN_LOGS_BTN = "Clear own logs";
+        TIMES = "How many times?";
+        BUY_TIMES = "Buy x times";
+        DEL_ENTRIES = "Remove your entries";
+        LOGGED_INTO = "You logged in to the address";
         break;
 }
 (function () {
