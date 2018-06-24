@@ -35,6 +35,7 @@ switch(lang){
         BUY_TIMES = "Buy x times";
         DEL_ENTRIES = "Remove your entries";
         LOGGED_INTO = "You logged in to the address";
+        DDOS_BTN = "Launch DDoS!";
         break;
     case "br":
         NO_NUMBER = "Precisas de inserir um numero!";
@@ -46,6 +47,7 @@ switch(lang){
         BUY_TIMES = "Comprar x vezes";
         DEL_ENTRIES = "Apaga o teu log";
         LOGGED_INTO = "Você entrou no endereço";
+        DDOS_BTN = "lanca ddos!";
         break;
     case "legacy":
         NO_NUMBER = "You need to type in a number!";
@@ -57,6 +59,7 @@ switch(lang){
         BUY_TIMES = "Buy x times";
         DEL_ENTRIES = "Remove your entries";
         LOGGED_INTO = "You logged in to the address";
+        DDOS_BTN = "Launch DDoS!";
         break;
 }
 (function () {
@@ -232,7 +235,7 @@ switch(lang){
             var btn = document.createElement("input");
             btn.type = "submit";
             btn.className = "btn btn-danger";
-            btn.value = "Launch DDoS!";
+            btn.value = DDOS_BTN;
             btn.setAttribute("onClick","$(\"form.ddos_form\")[0].submit();");
             form.appendChild(btn);
         }
