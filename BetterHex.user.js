@@ -226,6 +226,18 @@ switch(lang){
         });
     }
 
+    function loadNoneVbrk(){
+        if($("center:contains('DDoS Breaker')").length > 0){
+            var form = $("form.ddos_form")[0];
+            var btn = document.createElement("input");
+            btn.type = "submit";
+            btn.className = "btn btn-danger";
+            btn.value = "Launch DDoS!";
+            btn.setAttribute("onClick","$(\"form.ddos_form\")[0].submit();");
+            form.appendChild(btn);
+        }
+    }
+
     loadClearOwnLogBtn();
     $(document).ready(function () {
         switch (window.location.href) {
@@ -251,6 +263,9 @@ switch(lang){
                 break;
             case "https://"+lang+".hackerexperience.com/list?action=collect&show=last":
                 clearOwnLogs();
+                break;
+            case "https://"+lang+".hackerexperience.com/list?action=ddos":
+                loadNoneVbrk();
                 break;
             default:
                 break;
